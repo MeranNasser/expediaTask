@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1= title
+
+  for offer in offers
+    div.wrapper
+      div.imgwrapper
+        img.himg(src= offer.hotelInfo.hotelImageUrl)
+      div.contwrapper
+        h3 #{offer.hotelInfo.hotelName}
+        div.locwrap
+          img.icon(src= '/images/placeholder.png')
+          span #{offer.destination.city}, #{offer.destination.country}
+        div.pricewrap
+          img.icon(src= '/images/coin.png')
+          span #{offer.hotelPricingInfo.averagePriceValue} #{offer.hotelPricingInfo.currency}
+        div.ratingwrap
+          img.icon(src= '/images/star.png')
+          span #{offer.hotelInfo.hotelStarRating}
